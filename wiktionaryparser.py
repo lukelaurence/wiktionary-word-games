@@ -11,7 +11,7 @@ with open('enwiktionary-latest-pages-articles-multistream.xml','r') as f:
 		elif recording == 2:
 			if line == '==English==\n':
 				word = re.sub('</{0,1}title>','',title.strip(' \n'))
-				if word.isalpha() and word.islower():
+				if word.isalpha() and word.islower() and word.isascii():
 					print(word)
 				recording = 3
 		elif recording == 3:
